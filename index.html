@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Datalist demo</title>
+	<style>
+		body {
+				padding: 32px;
+				width: 100vw;
+				max-width: 500px;
+		}
+
+		[type="range"] {
+				width: 250px;
+		}
+	</style>
+	<script type="module">
+		document.querySelector("#amount").addEventListener("change", e => {
+      document.querySelector("#value").innerText = e.target.value;
+		});
+		document.querySelector("#amountDatalist").addEventListener("change", e => {
+      document.querySelector("#valueDatalist").innerText = e.target.value;
+		});
+	</script>
+</head>
+<body>
+<header>
+	<h1>Datalist makes inputs more usable</h1>
+</header>
+<main>
+	<article>
+		<h2>Datalist on text inputs - additional list of options</h2>
+		<section>
+			<label for="text">Fav animal - no datalist</label> <input id="text" type="text">
+			<br><br>
+			<label for="textDatalist">Fav animal - datalist</label> <input id="textDatalist" type="text" list="animals">
+			<datalist id="animals">
+				<option>Cat</option>
+				<option>Dog</option>
+				<option>Horse</option>
+			</datalist>
+		</section>
+	</article>
+	<article>
+		<h2>Datalist on range inputs - extremely useful ticks</h2>
+		<p>Notice how thumb "jumps" to the tick and stays there for a second. It makes it easier to select that value</p>
+		<section>
+			<label for="amount">Set amount - no datalist</label><br>
+			<input id="amount" type="range" min="0" max="50" value="5" step="1"><br>
+			Value: <span id="value"></span>
+			<label for="amountDatalist">Set amount - datalist</label><br>
+			<input id="amountDatalist" type="range" min="0" max="50" value="5" step="1" list="amounts"><br>
+			<datalist id="amounts">
+				<option>10</option>
+				<option>20</option>
+				<option>30</option>
+				<option>40</option>
+			</datalist>
+			Value: <span id="valueDatalist"></span>
+		</section>
+	</article>
+	<article>
+		<h2>Datalist on date inputs</h2>
+		<p>Datalist could be very useful to, for example, suggest first available date for an appointment</p>
+		<label for="appointment">Select appointment - no datalist</label> <input id="appointment" type="datetime-local" min="2023-08-10T06:30" max="2023-08-18T18:30"><br>
+		<label for="appointmentDatalist">Select appointment - datalist</label> <input id="appointmentDatalist" type="datetime-local" min="2023-08-10T06:30" max="2023-08-18T18:30" list="appointments">
+		<datalist id="appointments">
+			<option>2023-08-12T06:30</option>
+			<option>2023-08-13T06:30</option>
+			<option>2023-08-14T06:30</option>
+		</datalist>
+	</article>
+</main>
+</body>
+</html>
