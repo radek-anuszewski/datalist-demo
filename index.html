@@ -36,9 +36,9 @@
 			<br><br>
 			<label for="textDatalist">Fav animal - datalist</label> <input id="textDatalist" type="text" list="animals">
 			<datalist id="animals">
-				<option>Cat</option>
-				<option>Dog</option>
-				<option>Horse</option>
+				<option value="Cat">King of the house</option>
+				<option value="Dog">The most popular pet</option>
+				<option value="Horse">King of the stable</option>
 			</datalist>
 		</section>
 	</article>
@@ -52,7 +52,7 @@
 			<label for="amountDatalist">Set amount - datalist</label><br>
 			<input id="amountDatalist" type="range" min="0" max="50" value="5" step="1" list="amounts"><br>
 			<datalist id="amounts">
-				<option>10</option>
+				<option value="10">First</option>
 				<option>20</option>
 				<option>30</option>
 				<option>40</option>
@@ -61,14 +61,25 @@
 		</section>
 	</article>
 	<article>
-		<h2>Datalist on date inputs</h2>
+		<h2>Datalist on date and time inputs</h2>
 		<p>Datalist could be very useful to, for example, suggest first available date for an appointment</p>
 		<label for="appointment">Select appointment - no datalist</label> <input id="appointment" type="datetime-local" min="2023-08-10T06:30" max="2023-08-18T18:30"><br>
 		<label for="appointmentDatalist">Select appointment - datalist</label> <input id="appointmentDatalist" type="datetime-local" min="2023-08-10T06:30" max="2023-08-18T18:30" list="appointments">
 		<datalist id="appointments">
-			<option>2023-08-12T06:30</option>
-			<option>2023-08-13T06:30</option>
-			<option>2023-08-14T06:30</option>
+			<option value="2023-08-12T06:30">The quickest one - price 100 euros</option>
+			<option value="2023-08-13T06:30">Price 80 euros</option>
+			<option value="2023-08-14T06:30">Price 50 euros</option>
+		</datalist>
+	</article>
+	<article>
+		<h2>Datalist on month input</h2>
+		<label for="deadline">Select a deadline - no datalist</label> <input id="deadline" type="month" min="2023-11" max="2024-11">
+		<br>
+		<label for="deadlineDatalist">Select a deadline - no datalist</label> <input id="deadlineDatalist" type="month" min="2023-09" max="2024-11" list="deadlineList">
+		<datalist id="deadlineList">
+			<option value="2023-10">in the next month</option>
+			<option value="2023-12">In the next 3 months</option>
+			<option value="2024-01">In the first month of the next year</option>
 		</datalist>
 	</article>
 </main>
